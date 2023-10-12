@@ -12,11 +12,7 @@ int main(void)
 	std::cin >> input;
 	if (input == "ADD")
 	{
-		std::cout << "fist name	"; std::cin >> cmd;
-		std::cout << "last name	"; std::cin >> cmd;
-		std::cout << "nickname	"; std::cin >> cmd;
-		std::cout << "phone number	"; std::cin >> cmd;
-		std::cout << "dark secret	"; std::cin >> cmd;
+		std::getline(std::cin, cmd);
 	}
 	else if (input == "SEARCH")
 	{
