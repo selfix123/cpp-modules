@@ -2,15 +2,17 @@
 
 #include "Contact.hpp"
 #include <iostream>
-#define MAX_CON 8
+#include <iomanip>
+#define MAX_CON 4
 
 class PhoneBook{
 
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void	PhoneBook::PrintOneContact(int index);
-		void	PhoneBook::DisplayContact(void);
+		void	PrintOneContact(int index);
+		void	DisplayContact(void);
+		void	AddContact(Contact contact);
 
 
 	private:

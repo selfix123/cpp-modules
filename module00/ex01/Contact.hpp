@@ -7,11 +7,6 @@ class Contact
 		Contact();
 		Contact(std::string fname, std::string lname, std::string nname, std::string phone, std::string secret);
 		~Contact();
-		void	set_fname(std::string fname);
-		void	set_lname(std::string lname);
-		void	set_nname(std::string nname);
-		void	set_phone(std::string phone);
-		void	set_secret(std::string secret);
 		const std::string get_name(void) const;
 		const std::string get_lname(void) const;
 		const std::string get_nname(void) const;
