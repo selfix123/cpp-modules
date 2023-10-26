@@ -8,10 +8,12 @@ int main(void)
 	Contact	  contact;
 	std::string cmd;
 
-	std::cout << "Welcome to my phone book" << std::endl;
-	while (1)
+	std::cout << GREEN "Welcome to my phonebook!" RESET << std::endl;
+	std::cout << RED "Here are some rules to follow!:" RESET << std::endl;
+	std::cout << CYAN "	1. Only use the following commands: ADD SEARCH EXIT" RESET << std::endl; 
+	std::cout << CYAN "	2. Only use numbers when asked too!" RESET << std::endl;
+	while (std::cout << BLUE "Command: " RESET && std::getline(std::cin, cmd))
 	{
-		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
 		{
 			std::string name, last_name, nick_name, phone_number, darkest_secret;
@@ -25,7 +27,7 @@ int main(void)
 			std::getline(std::cin, phone_number);
 			std::cout << "darkest secret: ";
 			std::getline(std::cin, darkest_secret);
-			if (name == "" || last_name == "" || nick_name == "" || phone_number == "" || darkest_secret == "")
+			if (!name.length() || last_name == "" || nick_name == "" || phone_number == "" || darkest_secret == "")
 				std::cout << "No empty line will be accepted" << std::endl;
 			else
 			{
@@ -35,18 +37,15 @@ int main(void)
 		}
 		else if (cmd == "SEARCH")
 		{
-			std::string index;
 			phonebook.DisplayContact();
-			std::cout << "Enter the index of the contact you wish to see: " << std::endl; 
-			std::getline(std::cin, index);
-			try {
-				phonebook.PrintOneContact(std::stoi(index));
-			}
-			catch (const std::exception& e) {
+			std::cout << "Enter the index of the contact you wish to see: ";
+			std::getline(std::cin, cmd);
+			if (cmd.length() != 1 || !std::isdigit(cmd[0]))
 				std::cout << "A number is required bozo🤡" << std::endl;
-			}
+			else
+				phonebook.PrintOneContact(std::stoi(cmd));
 		}
-		else if (cmd == "Exit")
+		else if (cmd == "EXIT")
 			return (0);
 	}
 	return (0);

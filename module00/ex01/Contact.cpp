@@ -9,11 +9,11 @@ Contact::Contact(std::string fname, std::string lname, std::string nname, std::s
 	this->phone_number = phone;
 	this->darkest_secret = secret;
 
-	std::cout << "Constructor called!" << std::endl;
+	std::cout << GREEN "Constructor called!" RESET << std::endl;
 }
 
 Contact::~Contact(){
-	std::cout << "Destructor called!" << std::endl;
+	std::cout << RED "Destructor called Contact!" RESET << std::endl;
 }
 
 const std::string Contact::get_name(void) const

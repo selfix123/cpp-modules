@@ -1,9 +1,8 @@
 #pragma once
 
 #include "Contact.hpp"
-#include <iostream>
 #include <iomanip>
-#define MAX_CON 4
+#define MAX_CON 8
 
 class PhoneBook{
 
@@ -13,6 +12,7 @@ class PhoneBook{
 		void	PrintOneContact(int index);
 		void	DisplayContact(void);
 		void	AddContact(Contact contact);
+		void	printTable(void);
 
 
 	private:
