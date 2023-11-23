@@ -12,7 +12,7 @@ int main(void)
 	std::cout << RED "Here are some rules to follow!:" RESET << std::endl;
 	std::cout << CYAN "	1. Only use the following commands: ADD SEARCH EXIT" RESET << std::endl; 
 	std::cout << CYAN "	2. Only use numbers when asked too!" RESET << std::endl;
-	while (std::cout << BLUE "Command: " RESET && std::getline(std::cin, cmd))
+	while (std::cout << BLUE "Command: " RESET && std::getline(std::cin, cmd) && !std::cin.eof())
 	{
 		if (cmd == "ADD")
 		{
@@ -41,7 +41,7 @@ int main(void)
 			std::cout << "Enter the index of the contact you wish to see: ";
 			std::getline(std::cin, cmd);
 			if (cmd.length() != 1 || !std::isdigit(cmd[0]))
-				std::cout << "A number is required bozo🤡" << std::endl;
+				std::cout << "Only numbers will be accepted" << std::endl;
 			else
 				phonebook.PrintOneContact(std::stoi(cmd));
 		}

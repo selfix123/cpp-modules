@@ -59,11 +59,11 @@ void	PhoneBook::PrintOneContact(int index)
 
 void	PhoneBook::AddContact(Contact contact)
 {
-	if (this->nb_contact == MAX_CON && this->contact_index == MAX_CON)
+	if (this->nb_contact == MAX_CONTACT && this->contact_index == MAX_CONTACT)
 		this->contact_index = 0;
 	this->book[this->contact_index] = contact;
 	this->contact_index++;
-	if (this->nb_contact < MAX_CON)
+	if (this->nb_contact < MAX_CONTACT)
 		this->nb_contact = this->contact_index;
 }
 

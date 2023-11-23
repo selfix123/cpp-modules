@@ -2,7 +2,7 @@
 
 #include "Contact.hpp"
 #include <iomanip>
-#define MAX_CON 8
+#define MAX_CONTACT 8
 
 class PhoneBook{
 
@@ -16,7 +16,7 @@ class PhoneBook{
 
 
 	private:
-		Contact book[MAX_CON];
+		Contact book[MAX_CONTACT];
 		int		nb_contact;
 		int		contact_index;
 };
