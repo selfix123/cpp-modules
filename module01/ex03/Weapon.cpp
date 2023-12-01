@@ -5,15 +5,11 @@ Weapon::Weapon(std::string weaponType) {
 	std::cout << "Default Weapon constructor " << std::endl;
 }
 
-Weapon::Weapon() {
-	std::cout << "Default Weapon constructor " << std::endl;
-}
-
 Weapon::~Weapon() {
 	std::cout << "Weapon destructor" << std::endl;
 }
 
-void Weapon::setType(std::string name){
+void Weapon::setType(const std::string name){
 	this->type = name;
 }
 

@@ -3,11 +3,10 @@
 
 Zombie::Zombie(std::string name) {
 	this->zombieName = name;
-	std::cout << this->zombieName << " has been resurrected! " << std::endl;
 }
 
 Zombie::Zombie() {
-	std::cout << this->zombieName << " has been resurrected! " << std::endl;
+	std::cout << "Zombie created! " << std::endl;
 }
 
 void	Zombie::announce(){

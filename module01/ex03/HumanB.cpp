@@ -6,11 +6,15 @@ using std::endl;
 
 HumanB::HumanB(std::string humanName) {
 	this->name = humanName;
+	this->weapon = NULL;
 	std::cout << "HumanA constructor " << std::endl;
 }
 
 void HumanB::attack(void){
-	cout << this->name << " attacks with their " << this->weapon->getType() << endl;
+	if (this->weapon)
+		cout << this->name << " attacks with their " << this->weapon->getType() << endl;
+	else
+		cout << this->name << " attacks with their hands" << endl;
 }
 
 HumanB::~HumanB() {
