@@ -13,8 +13,9 @@ private:
 public:
 	Fixed();
 	~Fixed();
-	Fixed(int nb);
 	Fixed(const Fixed &inst);
+	Fixed(const float &nb);
+	Fixed(const int &nb);
 
 	int getRawBits(void) const;
 	int toInt(void) const;
