@@ -7,7 +7,7 @@
 class Fixed
 {
 private:
-	int _nbr;
+	int _value;
 	static const int _bits = 8;
 	
 public:
@@ -35,11 +35,11 @@ public:
 	Fixed operator/(const Fixed &rhs);
 	Fixed operator*(const Fixed &rhs);
 
-	static Fixed min(Fixed &nb1, Fixed &nb2);
-	static Fixed min(Fixed const &nb1, Fixed const &nb2);
+	static Fixed &min(Fixed &nb1, Fixed &nb2);
+	static const Fixed &min(Fixed const &nb1, Fixed const &nb2);
 
-	static Fixed max(Fixed &nb1, Fixed &nb2);
-	static Fixed max(Fixed const &nb1, Fixed const &nb2);
+	static Fixed &max(Fixed &nb1, Fixed &nb2);
+	static const Fixed &max(Fixed const &nb1, Fixed const &nb2);
 
 	Fixed &operator++();
 	Fixed &operator--();
