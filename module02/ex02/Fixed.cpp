@@ -36,27 +36,27 @@ std::ostream &operator<<(std::ostream &os, const Fixed &rhs) {
 	return os << rhs.toFloat();
 }
 
-bool Fixed::operator==(const Fixed &rhs){
+bool Fixed::operator==(const Fixed &rhs) const{
 	return (this->toFloat() == rhs.toFloat() ? true : false);
 }
 
-bool Fixed::operator!=(const Fixed &rhs){
+bool Fixed::operator!=(const Fixed &rhs) const{
 	return (this->toFloat() != rhs.toFloat() ? true : false);
 }
 
-bool Fixed::operator>(const Fixed &rhs){
+bool Fixed::operator>(const Fixed &rhs) const{
 	return (this->toFloat() > rhs.toFloat() ? true : false);
 }
 
-bool Fixed::operator<(const Fixed &rhs){
+bool Fixed::operator<(const Fixed &rhs) const{
 	return (this->toFloat() < rhs.toFloat() ? true : false);
 }
 
-bool Fixed::operator>=(const Fixed &rhs){
+bool Fixed::operator>=(const Fixed &rhs) const{
 	return (this->toFloat() >= rhs.toFloat() ? true : false);
 }
 
-bool Fixed::operator<=(const Fixed &rhs){
+bool Fixed::operator<=(const Fixed &rhs) const{
 	return (this->toFloat() <= rhs.toFloat() ? true : false);
 }
 
@@ -93,11 +93,11 @@ Fixed &Fixed::min(Fixed &nb1, Fixed &nb2){
 }
 
 const Fixed &Fixed::min(Fixed const  &nb1, Fixed  const &nb2){
-	return (nb1 < nb2) ? nb1 : nb2;
+	return nb1 < nb2 ? nb1 : nb2;
 }
 
 const Fixed &Fixed::max(Fixed const &nb1, Fixed const &nb2){
-	return (nb1 > nb2) ? nb1 : nb2;
+	return nb1 > nb2 ? nb1 : nb2;
 }
 
 Fixed &Fixed::max(Fixed &nb1, Fixed &nb2){
