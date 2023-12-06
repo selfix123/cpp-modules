@@ -2,30 +2,30 @@
 
 
 Fixed::Fixed(void):_value(0) {
-	std::cout << "DeFault Fixed constructor " << std::endl;
+	//std::cout << "DeFault Fixed constructor " << std::endl;
 }
 
 Fixed::Fixed(const Fixed &inst) {
-	std::cout << "Copy Fixed constructor " << std::endl;
+	//std::cout << "Copy Fixed constructor " << std::endl;
 	*this = inst;
 }
 
 Fixed::Fixed(int const &nb){
 	this->_value = (nb << this->_bits);
-	std::cout << " Int constructor called " << std::endl;
+	//std::cout << " Int constructor called " << std::endl;
 }
 
 Fixed::Fixed(float const &nb){
-	this->_value = std::roundf( nb * (1 << this->_bits));
-	std::cout << " float constructor called " << std::endl;
+	this->_value = std::roundf(nb * (1 << this->_bits));
+	//std::cout << " float constructor called " << std::endl;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Fixed destructor" << std::endl;
+	//std::cout << "Fixed destructor" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &rhs) {
-	std::cout << "Fixed operator = overide" << std::endl;
+	//std::cout << "Fixed operator = overide" << std::endl;
 	if (this != &rhs) {
 		this->_value = rhs._value;
 	}
@@ -77,14 +77,14 @@ Fixed Fixed::operator-(const Fixed &rhs){
 Fixed Fixed::operator*(const Fixed &rhs){
 	Fixed result;
 
-	result.setRawBits(this->_value * rhs._value);
+	result.setRawBits(this->_value * rhs.getRawBits() >> this->_bits);
 	return (result);
 }
 
 Fixed Fixed::operator/(const Fixed &rhs){
 	Fixed result;
 
-	result.setRawBits(this->_value / rhs._value);
+	result.setRawBits(this->_value * rhs.getRawBits() << this->_bits);
 	return (result);
 }
 
@@ -131,7 +131,7 @@ float Fixed::toFloat(void) const{
 }
 
 int Fixed::toInt(void) const{
-	return this->_value >> this->_bits;
+	return (int)this->_value >> (int)this->_bits;
 }
 
 int Fixed::getRawBits(void) const{
