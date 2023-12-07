@@ -1,4 +1,5 @@
 #include "Weapon.hpp"
+#include <iostream>
 
 Weapon::Weapon(std::string weaponType) {
 	this->type = weaponType;

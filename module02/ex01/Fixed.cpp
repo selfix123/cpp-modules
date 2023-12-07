@@ -36,10 +36,6 @@ std::ostream &operator<<(std::ostream &os, const Fixed &rhs) {
 	return os << rhs.toFloat();
 }
 
-// bool Fixed::operator==(const Fixed &rhs){
-// 	return (this->toFloat() == rhs.toFloat() ? true : false);
-// }
-
 float Fixed::toFloat(void) const{
 	return (float)this->_nbr / (float)(1 << this->_bits);
 }

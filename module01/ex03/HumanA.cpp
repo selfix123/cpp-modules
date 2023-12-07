@@ -3,22 +3,17 @@
 using std::cout;
 using std::endl;
 
-HumanA::HumanA(std::string humanName, Weapon &weaponType) {
-	this->name = humanName;
-	this->weapon = &weaponType;
-	std::cout << "HumanA constructor " << std::endl;
-}
+HumanA::HumanA(std::string humanName, Weapon &weaponType): name(humanName), weapon(weaponType) {
 
-HumanA::HumanA() {
-	std::cout << "Default HumanA constructor " << std::endl;
+	cout << "HumanA constructor " << endl;
 }
 
 void HumanA::attack(void){
-	cout << this->name << " attacks with their " << this->weapon->getType() << endl;
+	cout << this->name << " attacks with their " << this->weapon.getType() << endl;
 }
 
 HumanA::~HumanA() {
-	std::cout << "HumanA destructor" << std::endl;
+	cout << "HumanA destructor" << endl;
 }
 
 const std::string& HumanA::getType(void) const 
@@ -28,5 +23,5 @@ const std::string& HumanA::getType(void) const
 
 void HumanA::setWeapon(Weapon &weapon)
 {
-	this->weapon = &weapon;
+	this->weapon = weapon;
 }

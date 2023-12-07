@@ -7,7 +7,7 @@ using std::endl;
 HumanB::HumanB(std::string humanName) {
 	this->name = humanName;
 	this->weapon = NULL;
-	std::cout << "HumanA constructor " << std::endl;
+	cout << "HumanA constructor " << endl;
 }
 
 void HumanB::attack(void){
@@ -18,7 +18,7 @@ void HumanB::attack(void){
 }
 
 HumanB::~HumanB() {
-	std::cout << "HumanA destructor" << std::endl;
+	cout << "HumanA destructor" << endl;
 }
 
 const std::string& HumanB::getWeapon(void) const 

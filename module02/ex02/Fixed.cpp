@@ -84,7 +84,7 @@ Fixed Fixed::operator*(const Fixed &rhs){
 Fixed Fixed::operator/(const Fixed &rhs){
 	Fixed result;
 
-	result.setRawBits(this->_value * rhs.getRawBits() << this->_bits);
+	result.setRawBits(this->_value *  (1 << this->_bits) / rhs.getRawBits());
 	return (result);
 }
 

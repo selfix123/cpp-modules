@@ -13,6 +13,7 @@
 # define DEFAULT "\033[39m"
 # define ERASE_LINE "\033[2K\r"
 # define HORDE 10
+
 class Zombie
 {
 private:
