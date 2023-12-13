@@ -11,9 +11,11 @@
 # define CYAN "\033[36m"
 # define WHITE "\033[37m"
 
+# define CALL 1
+
 class ClapTrap
 {
-private:
+protected:
 	int _hitPoint;
 	int _energyPoint;
 	int _damagePoint;
@@ -21,6 +23,7 @@ private:
 
 public:
 	ClapTrap(std::string name);
+	ClapTrap();
 	ClapTrap(const ClapTrap &inst);
 	~ClapTrap();
 
