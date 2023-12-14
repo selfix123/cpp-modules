@@ -1,5 +1,4 @@
 #include "ClapTrap.hpp"
-#include <iostream>
 
 ClapTrap::ClapTrap(std::string name):_damagePoint(0), _energyPoint(10), _hitPoint(10){
 	if (CALL)

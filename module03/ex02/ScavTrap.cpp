@@ -1,6 +1,4 @@
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
-#include <iostream>
 
 using std::cout;
 using std::endl;

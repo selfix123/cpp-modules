@@ -3,19 +3,23 @@
 
 ClapTrap::ClapTrap(std::string name):_damagePoint(0), _energyPoint(10), _hitPoint(10){
 	this->_name = name;
-	//std::cout << "Default ClapTrap constructor " << std::endl;
+	if (CALL)
+		std::cout << "Default ClapTrap constructor " << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &inst) {
-	//std::cout << "Copy ClapTrap constructor " << std::endl;
+	if (CALL)
+		std::cout << "Copy ClapTrap constructor " << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	//std::cout << "ClapTrap destructor" << std::endl;
+	if (CALL)
+		std::cout << "ClapTrap destructor" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &rhs) {
-	//std::cout << "ClapTrap operator = overide" << std::endl;
+	if (CALL)
+		std::cout << "ClapTrap operator = overide" << std::endl;
 	if (this != &rhs) {
 		this->_name = rhs._name;
 	}

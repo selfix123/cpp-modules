@@ -11,6 +11,8 @@
 # define CYAN "\033[36m"
 # define WHITE "\033[37m"
 
+# define CALL 0
+
 class ClapTrap
 {
 private:

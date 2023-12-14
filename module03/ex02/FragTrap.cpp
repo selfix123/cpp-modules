@@ -1,7 +1,4 @@
 #include "FragTrap.hpp"
-#include "ClapTrap.hpp"
-#include <cstdlib>
-#include <string>
 
 FragTrap::FragTrap(): ClapTrap() {
 	if (CALL)
