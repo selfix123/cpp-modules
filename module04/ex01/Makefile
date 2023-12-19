@@ -1,4 +1,4 @@
-NAME = animal
+NAME = brain
 
 CC = c++
 
@@ -11,7 +11,8 @@ SRC =	main.cpp\
 		Dog.cpp\
 		Cat.cpp\
 		WrongCat.cpp\
-		WrongAnimal.cpp
+		WrongAnimal.cpp\
+		Brain.cpp
 
 
 OBJS = $(SRC:.cpp=.o)
