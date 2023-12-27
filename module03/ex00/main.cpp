@@ -8,6 +8,7 @@ int main(void){
 	// bot->takeDamage(9);
 	// bot->beRepaired(8);
 	// bot->takeDamage(10);
+	// bot->takeDamage(10);
 
 	//no more energy
 	bot->attack("Someone");

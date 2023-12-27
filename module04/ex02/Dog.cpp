@@ -1,5 +1,5 @@
 #include "Dog.hpp"
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 Dog::Dog(){
 	if (CALL)

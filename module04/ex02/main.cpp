@@ -1,22 +1,22 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-#define	NB_ANIMAL	20
+#define	NB	20
 
 int	main(void)
 {
-	Animal	*animal[NB_ANIMAL];
+	AAnimal	*animal[NB];
 
-	for (int i = 0; i < NB_ANIMAL / 2; i++) {
+	for (int i = 0; i < NB / 2; i++) {
 		animal[i] = new Dog();
 	}
-	for (int i = NB_ANIMAL / 2; i < NB_ANIMAL; i++) {
+	for (int i = NB / 2; i < NB; i++) {
 		animal[i] = new Cat();
 	}
-	for (int i = 0; i < NB_ANIMAL; i++) {
+	for (int i = 0; i < NB; i++) {
 		delete animal[i];
 	}
 	return 0;

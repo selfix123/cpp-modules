@@ -19,7 +19,7 @@ int main( void ) {
 
     std::cout << "Avant: " << a << std::endl;
     a++;
-    std::cout << "Apres: " << a << std::endl;
+    std::cout << "Aprestest: " << a << std::endl;
     std::cout << "Avant: " << a << std::endl;
     ++a;
     std::cout << "Apres: " << a << std::endl;

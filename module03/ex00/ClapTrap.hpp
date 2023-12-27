@@ -11,7 +11,7 @@
 # define CYAN "\033[36m"
 # define WHITE "\033[37m"
 
-# define CALL 0
+# define CALL 1
 
 class ClapTrap
 {

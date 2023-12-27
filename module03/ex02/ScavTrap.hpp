@@ -11,7 +11,6 @@
 # define CYAN "\033[36m"
 # define WHITE "\033[37m"
 
-# define CALL 1
 
 class ScavTrap : public ClapTrap
 {

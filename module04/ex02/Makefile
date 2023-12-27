@@ -1,4 +1,4 @@
-NAME = brain
+NAME = abstract
 
 CC = c++
 
@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SRC =	main.cpp\
-		Animal.cpp\
+		AAnimal.cpp\
 		Dog.cpp\
 		Cat.cpp\
 		WrongCat.cpp\

@@ -3,7 +3,7 @@
 
 
 int	main(void){
-	ScavTrap zack("Zazk");
+	ScavTrap zack("Zack");
 	ScavTrap raph("Raph");
 
 	//HP test
@@ -16,7 +16,7 @@ int	main(void){
 	zack.takeDamage(150);
 	zack.takeDamage(150);
 	zack.takeDamage(150);
-	zack.attack("Willy");
+	zack.attack("Bob");
 	zack.guardGate();
 	zack.beRepaired(200000000);
 
@@ -24,12 +24,12 @@ int	main(void){
 	//Energy test
 	raph.guardGate();
 	for (int i = 0; i < 50; i++){
-		raph.attack("Zahhh");
+		raph.attack("Zack");
 	}
 	raph.beRepaired(1500000000);
 	raph.guardGate();
 	raph.beRepaired(150);
-	raph.attack("Zahhh");
+	raph.attack("Zack");
 	raph.guardGate();
 
 }

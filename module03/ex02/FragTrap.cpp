@@ -54,11 +54,11 @@ void FragTrap::error_checker(void) const{
 	if (this->_energyPoint == 0){
 		std::cout << RED "FragTrap " << GREEN << this->_name << BLACK " cannot take any hight fives for the moment.";
 		std::cout << "He needs to sleep for a bit, he is missing energy:(" << std::endl;
-		exit(1);
+		return ;
 	}
 	else if (this->_hitPoint == 0){
 		std::cout << RED "FragTrap " << GREEN << this->_name << BLACK " is now dead:(. R I P" << std::endl;
-		exit(1);
+		return ;
 	}
 }
 
