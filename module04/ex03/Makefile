@@ -1,4 +1,4 @@
-NAME = abstract
+NAME = spells
 
 CC = c++
 
@@ -7,12 +7,11 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SRC =	main.cpp\
-		AAnimal.cpp\
-		Dog.cpp\
-		Cat.cpp\
-		WrongCat.cpp\
-		WrongAnimal.cpp\
-		Brain.cpp
+		AMateria.cpp\
+		Character.cpp\
+		Cure.cpp\
+		Ice.cpp\
+		MateriaSource.cpp\
 
 
 OBJS = $(SRC:.cpp=.o)

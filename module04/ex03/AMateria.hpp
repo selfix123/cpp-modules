@@ -1,7 +1,10 @@
 #pragma once
 
 #include "ICharacter.hpp"
+#include "colors.hpp"
 #include <iostream>
+
+#define CALL false
 
 class ICharacter;
 

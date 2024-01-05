@@ -2,24 +2,28 @@
 #include <iostream>
 
 Cure::Cure(): AMateria("cure"){
-	std::cout << "Default Cure constructor " << std::endl;
+	if (CALL)
+		std::cout << "Default Cure constructor " << std::endl;
 }
 
 Cure::Cure(const Cure &inst):AMateria(inst) {
-	std::cout << "Copy Cure constructor " << std::endl;
+	if (CALL)
+		std::cout << "Copy Cure constructor " << std::endl;
 }
 
 Cure::~Cure() {
-	std::cout << "Cure destructor" << std::endl;
+	if (CALL)
+		std::cout << "Cure destructor" << std::endl;
 }
 
 Cure& Cure::operator=(const Cure &rhs) {
-	std::cout << "Cure operator = overide" << std::endl;		
+	if (CALL)
+		std::cout << "Cure operator = overide" << std::endl;		
 	return *this;
 }
 
 void	Cure::use(ICharacter &target){
-	std::cout << "heal's " << target.getName() << "'s wounds" << std::endl;
+	std::cout << GREEN "heal's " << target.getName() << "'s wounds" RESET << std::endl;
 }
 
 AMateria* Cure::clone() const{

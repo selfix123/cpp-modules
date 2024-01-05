@@ -4,15 +4,9 @@
 
 class IMateriaSource
 {
-private:
-
 public:
 	// Constructors / Destructor
-	IMateriaSource();
-	IMateriaSource(const IMateriaSource &inst);
 	virtual ~IMateriaSource() {}
-
-	IMateriaSource& operator=(const IMateriaSource &rhs);
 
 	// Functions
 	virtual void learnMateria(AMateria*) = 0;

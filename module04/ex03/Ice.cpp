@@ -1,25 +1,30 @@
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
-Ice::Ice() {
-	std::cout << "Default Ice constructor " << std::endl;
+Ice::Ice() : AMateria("ice") {
+	if (CALL)
+		std::cout << "Default Ice constructor " << std::endl;
 }
 
-Ice::Ice(const Ice &inst) {
-	std::cout << "Copy Ice constructor " << std::endl;
+Ice::Ice(const Ice &inst): AMateria(inst) {
+	if (CALL)
+		std::cout << "Copy Ice constructor " << std::endl;
 }
 
 Ice::~Ice() {
-	std::cout << "Ice destructor" << std::endl;
+	if (CALL)
+		std::cout << "Ice destructor" << std::endl;
 }
 
 Ice& Ice::operator=(const Ice &rhs) {
-	std::cout << "Ice operator = overide" << std::endl;
+	if (CALL)
+		std::cout << "Ice operator = overide" << std::endl;
 	return *this;
 }
 
 void	Ice::use(ICharacter &target){
-	std::cout << "shoots an ice bolt at " << target.getName() << std::endl;
+	std::cout << CYAN "shoots an ice bolt at " << target.getName() << RESET << std::endl;
 }
 
 AMateria* Ice::clone() const{
