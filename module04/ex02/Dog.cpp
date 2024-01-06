@@ -33,6 +33,14 @@ void Dog::makeSound() const{
 	std::cout << " Woof Woof" << std::endl;
 }
 
+void Dog::setIdea(int i, std::string string){
+	this->ideas->setIdea(i, string);
+}
+
+const std::string &Dog::getIdea(int i) const{
+	return this->ideas->getIdea(i);
+}
+
 const std::string &Dog::getType() const{
 	return this->_type;
 }

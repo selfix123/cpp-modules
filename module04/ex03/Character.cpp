@@ -64,6 +64,7 @@ void Character::unequip(int idx){
 		_floor[_floorIndex] = _book[idx];
 		_floorIndex++;
 		_book[idx] = NULL;
+		std::cout << BLUE "Spell unequiped" RESET << std::endl; 
 	}
 }
 

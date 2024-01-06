@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#define CALL 0
+#define CALL 1
 
 class WrongAnimal{
 
