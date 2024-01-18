@@ -5,53 +5,52 @@
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 
-
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
+	IMateriaSource* source = new MateriaSource();
+	source->learnMateria(new Ice());
+	source->learnMateria(new Cure());
+	ICharacter* Oli = new Character("Oli");
+	AMateria* test;
+	test = source->createMateria("ice");
+	Oli->equip(test);
+	test = source->createMateria("cure");
+	Oli->equip(test);
+	test = source->createMateria("cure");
+	Oli->equip(test);
+	test = source->createMateria("cure");
+	Oli->equip(test);
+	test = source->createMateria("ice");
+	Oli->equip(test);
 	ICharacter* bob = new Character("bob");
-	*(Character*)bob = *(Character*)me;
+	*(Character*)bob = *(Character*)Oli;
 	bob->use(0, *bob);
 	bob->use(1, *bob);
 	bob->use(2, *bob);
 	bob->unequip(3);
 	delete bob;
-	delete me;
-	delete src;
-	delete tmp;
+	delete Oli;
+	delete source;
+	delete test;
 }
 
 // int main()
 // {
-// 	IMateriaSource* src = new MateriaSource();
-// 	IMateriaSource* test = src;
-// 	src->learnMateria(new Ice());
-// 	src->learnMateria(new Cure());
-// 	ICharacter* me = new Character("me");
-// 	AMateria* tmp;
-// 	tmp = src->createMateria("ice");
-// 	me->equip(tmp);
-// 	tmp = src->createMateria("cure");
-// 	me->equip(tmp);
+// 	IMateriaSource* source = new MateriaSource();
+// 	IMateriaSource* test = source;
+// 	source->learnMateria(new Ice());
+// 	source->learnMateria(new Cure());
+// 	ICharacter* Oli = new Character("Oli");
+// 	AMateria* test;
+// 	test = source->createMateria("ice");
+// 	Oli->equip(test);
+// 	test = source->createMateria("cure");
+// 	Oli->equip(test);
 // 	ICharacter* bob = new Character("bob");
-// 	me->use(0, *bob);
-// 	me->use(1, *bob);
+// 	Oli->use(0, *bob);
+// 	Oli->use(1, *bob);
 // 	delete bob;
-// 	delete me;
-// 	delete src;
+// 	delete Oli;
+// 	delete source;
 // 	return 0;
 // }

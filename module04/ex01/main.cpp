@@ -22,5 +22,27 @@ int	main(void)
 		delete animal[i];
 		std::cout << std::endl;
 	}
+
+	std::cout << "#--------------------------------------------#" << std::endl;
+
+ 	Cat *chat = new Cat;
+	chat->setIdea(0, "je ");
+	chat->setIdea(1, "ne ");
+	chat->setIdea(2, "veux ");
+	chat->setIdea(3, "pas ");
+	chat->setIdea(4, "bruler ");
+	chat->setIdea(5, "le ");
+	chat->setIdea(6, "monde ");
+	Cat chat2(*chat);
+	chat->setIdea(6, "mondeasdasdasd ");
+	std::cout << chat2.getIdea(0) << std::endl;
+	std::cout << chat2.getIdea(1) << std::endl;
+	std::cout << chat2.getIdea(2) << std::endl;
+	std::cout << chat2.getIdea(3) << std::endl;
+	std::cout << chat2.getIdea(4) << std::endl;
+	std::cout << chat2.getIdea(5) << std::endl;
+	std::cout << chat2.getIdea(6) << std::endl;
+	delete chat;
+
 	return 0;
 }

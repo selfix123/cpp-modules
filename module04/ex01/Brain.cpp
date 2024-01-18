@@ -25,3 +25,11 @@ Brain::~Brain(){
 	if (CALL)
 		std::cout << "Brain destructor called" << std::endl;
 }
+
+const std::string &Brain::getIdea(int i) const{
+	return this->_ideas[i];
+}
+
+void Brain::setIdea(int i, std::string str){
+	this->_ideas[i] = str;
+}

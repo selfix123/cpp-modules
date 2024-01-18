@@ -16,9 +16,7 @@ Cat::Cat(const Cat &inst){
 Cat& Cat::operator=(const Cat &rhs) {
 	if (CALL)
 		std::cout << "Cat operator = overide" << std::endl;
-	if (this != &rhs) {
-		_type = rhs._type;
-	} 
+	this->ideas = new Brain(*rhs.ideas);
 	return *this;
 }
 
