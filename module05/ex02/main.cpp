@@ -1,12 +1,13 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void){
 
 std::cout << "test1" << std::endl;
 	try{
 		Bureaucrat bob("bob", 1);
-		Form form("The one and only form", 150, 50);
+		AForm form("The one and only form", 150, 50);
 		std::cout << bob << std::endl;
 
 		bob.Decrement();
