@@ -11,6 +11,7 @@ Form::Form(std::string name,int signGrade, int execGrade):_name(name), _isSigned
 
 Form::Form(const Form &inst):_name(inst.getName()),  _isSigned(inst.getIsSigned()),_signGrade(inst.getSignGrade()), _execGrade(inst.getExecGrade()){
 	std::cout << "Copy Form constructor " << std::endl;
+	*this = inst;
 }
 
 Form::~Form() {
@@ -31,9 +32,7 @@ std::ostream &operator<<(std::ostream &os, const Form &rhs){
 
 void Form::beSigned(Bureaucrat &bob){
 
-	if (this->_isSigned)
-		throw std::invalid_argument("Form already signed!");
-	else if (bob.getGrade() > _signGrade)
+	if (bob.getGrade() > this->getSignGrade())
 		throw GradeTooLowException();
 	else
 		_isSigned = true;

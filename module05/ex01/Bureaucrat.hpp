@@ -2,6 +2,7 @@
 
 #include <stdexcept>
 #include <iostream>
+#include "Form.hpp"
 
 class Form;
 
@@ -30,7 +31,7 @@ public:
 	void Increment();
 	void Decrement();
 
-	void beSigned(Form &form);
+	void signForm(Form &form);
 
 	class GradeTooLowException : public std::exception{
 		public: 

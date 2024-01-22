@@ -29,14 +29,21 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &rhs){
 	return (os);
 }
 
-void Bureaucrat::beSigned(Form &form){
-	try {
-		
-	} catch (std::exception & e){
-		
+void Bureaucrat::signForm(Form &form){
+	if (!form.getIsSigned()){
+		try {
+			form.beSigned(*this);
+		} catch (std::exception & e){
+			std::cout  << e.what() << std::endl;
+			std::cout << this->getName() << " couldn't sign form because grade too low!" << std::endl;
+			std::cout << "Expected grade was " << form.getSignGrade() << ", " << this->getName() << " grade is " << this->getGrade() << std::endl;
+			return ;
+		}
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
 	}
+	else
+		std::cout << "Form was already signed too bad for you!" << std::endl;
 }
-
 
 const char *Bureaucrat::GradeTooHightException::what(void) const throw(){
 	return ("Grade too hight!!");
