@@ -33,6 +33,8 @@ public:
 
 	void signForm(AForm &form);
 
+	void executeForm(AForm const & form);
+
 	class GradeTooLowException : public std::exception{
 		public: 
 			const char *what(void) const throw();

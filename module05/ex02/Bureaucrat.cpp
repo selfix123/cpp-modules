@@ -29,6 +29,15 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &rhs){
 	return (os);
 }
 
+void Bureaucrat::executeForm(AForm const & form){
+	try{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}catch(std::exception & e){
+		std::cout << this->getName() << " couldn't execute the form " << form.getName() << std::endl << e.what() << std::endl;
+	}
+}
+
 void Bureaucrat::signForm(AForm &form){
 	if (!form.getIsSigned()){
 		try {

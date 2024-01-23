@@ -1,6 +1,8 @@
 #pragma once
 
 #include "AForm.hpp"
+#include <fstream>
+
 
 class ShrubberyCreationForm : public AForm
 {
@@ -16,7 +18,9 @@ public:
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm &rhs);
 
 	// Functions
-	void CreationFile(Bureaucrat &bob);
+	virtual void execute(Bureaucrat const &bob) const;
+
+	std::string getTarget() const;
 };
 
 // ShrubberyCreationForm_HPP

@@ -1,6 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
-#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):AForm("Shrubbery Form", 145, 137), _target(target) {
 	std::cout << "Default ShrubberyCreationForm constructor " << std::endl;
@@ -21,14 +20,18 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return *this;
 }
 
-void	ShrubberyCreationForm::CreationFile(Bureaucrat &bob){
+std::string ShrubberyCreationForm::getTarget() const{
+	return this->_target;
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const &bob) const{
 	std::ofstream asciiFile;
 
 	if (bob.getGrade() < this->getExecGrade())
 		throw GradeTooLowException();
 	if (!this->getIsSigned())
 		throw std::invalid_argument("Form not signed!");
-	asciiFile.open(this->_target + "_shrubbery");
+	asciiFile.open(this->getTarget() + "_shrubbery");
 	if (!asciiFile.is_open())
 		throw std::invalid_argument("cannot open file");
 	asciiFile << "..  ...  ...  ...  ...  ...  ."  << std::endl;

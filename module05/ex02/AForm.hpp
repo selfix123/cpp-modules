@@ -33,6 +33,8 @@ public:
 
 	void beSigned(Bureaucrat &bob);
 
+	virtual void execute(Bureaucrat const & executor) const = 0;
+
 	class GradeTooLowException : public std::exception{
 		public: 
 			const char *what(void) const throw();
