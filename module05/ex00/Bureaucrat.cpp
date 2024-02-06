@@ -46,7 +46,7 @@ int Bureaucrat::getGrade(void) const{
 }
 
 void Bureaucrat::Increment(){
-	this->setGrade(this->getGrade() - 1);	
+	this->setGrade(this->getGrade() - 1);
 }
 
 void Bureaucrat::Decrement(){
