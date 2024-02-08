@@ -1,4 +1,6 @@
 #include <iostream>
+#include <climits>
+#include <iomanip>
 
 enum {
 	NONE,
@@ -11,12 +13,12 @@ enum {
 
 class Parsing{
 	private:
+	std::string _str;
 	int _type;
 	int _intValue;
 	double _doubleValue;
 	float _floatValue;
 	char _charValue;
-	std::string _str;
 
 	public:
 
@@ -29,7 +31,8 @@ class Parsing{
 	void charConv();
 	void intConv();
 	void floatConv();
-
+	void doubleConv();
+	void specConv();
 
 	bool isInt();
 	bool isChar();
