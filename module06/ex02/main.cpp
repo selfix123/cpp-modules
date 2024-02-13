@@ -72,7 +72,7 @@ int main(){
 	randomize();
 	Base *ptr1 = generate();
 	identify(ptr1);
-	Base *ptr2 = generate();
+	Base *ptr2 = NULL;
 	identify(*ptr2);
 	delete ptr1;
 	delete ptr2;
