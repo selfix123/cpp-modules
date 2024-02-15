@@ -1,11 +1,10 @@
 #include <iostream>
 #include <stack>
 
-
 #pragma once
 
 template <typename T>
-class MutantStack : std::stack<T>
+class MutantStack : public std::stack<T>
 {
 private:
 
@@ -17,7 +16,7 @@ public:
 		std::stack<T>::operator=(rhs);
 		return *this;
 	}
-	typedef typename std::stack<T>::container_type::const_iterator it;
-	it begin(){return (std::stack<T>::c.begin());};
-	it end() {return (std::stack<T>::c.end());};
+	typedef typename std::stack<T>::container_type::iterator iterator;
+	iterator begin(){return (std::stack<T>::c.begin());};
+	iterator end() {return (std::stack<T>::c.end());};
 };
