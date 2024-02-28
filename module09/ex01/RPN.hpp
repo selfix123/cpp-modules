@@ -8,10 +8,10 @@
 class RPN
 {
 private:
+	std::string _input;
 	int _a;
 	int _b;
 	std::stack<int>  _stack;
-	std::string _input;
 
 public:
 	// Constructors / Destructor
@@ -24,8 +24,9 @@ public:
 
 	// Functions
 	void loop();
+	void popNumber();
 	void parseInput();
 	void printInput();
-	void RpnCalculation(char const c);
+	void RpnCalculation();
 
 };
