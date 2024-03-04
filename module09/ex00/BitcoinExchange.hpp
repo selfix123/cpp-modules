@@ -11,9 +11,9 @@ class BitcoinExchange
 private:
 	std::map<std::string, float> 	_map;
 	std::ifstream 		_file[2];
-	std::string 		_date;
-	float				_value;
-	std::string			_path;
+	std::string 		_date, _value;
+	float				_rate;
+	std::string			_path, _dbPath;
 	std::string			_line;
 
 public:
@@ -28,6 +28,9 @@ public:
 
 	// Functions
 	void checkIfCsv(const std::string csvFile);
+	bool checkDate(const std::string str);
+	int nbrOfDay(int year, int month);
+	void getRate();
 	void fillMap();
 	void checkHeader();
 };
