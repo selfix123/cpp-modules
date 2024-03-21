@@ -28,8 +28,10 @@ public:
 
 	// Functions
 	void checkIfCsv(const std::string csvFile);
+	std::string skipChar(const std::string &line, char c);
+	void printDb(void);
 	bool checkDate(const std::string str);
-	int nbrOfDay(int year, int month);
+	int nbrOfDay(int month);
 	void getRate();
 	void fillMap();
 	void checkHeader();
