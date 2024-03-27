@@ -66,13 +66,13 @@ void BitcoinExchange::getRate(){
 					it--;
 				if (_value != "0" && _rate == 0)
 					std::cout << "error: Invalid rate format -> " << _value << std ::endl;
-				if (_rate < 0)
+				else if (_rate < 0)
 					std::cout << "error: Invalid format. Not a positive number -> " << _value << std::endl;
-				if (_rate > 1000)
+				else if (_rate > 1000)
 					std::cout << "error: Invalid format. Number too large -> " << _value << std::endl;
 				else
 					std::cout << _date << " -> " << it->first << " -> " << _rate << " = " << _rate * it->second << std::endl;
-			}
+			} 
 			else
 				std::cout << "error: Invalid date format -> " << _date << std::endl;
 		}
