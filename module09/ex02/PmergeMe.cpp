@@ -32,10 +32,29 @@ void PmergeMe::printDeque() {
 		std::cout << _deque[i] << std::endl;
 }
 
-void PmergeMe::sortVector() {
 
+void PmergeMe::sortVector(){
+	std::cout <<  "Vector\n{"  << std::endl;
+	std::cout << "Before ";
+	printVec();
+	std::cout << std::endl;
+	int K = _vec.size() / 2;
+	sort(_vec, 0, _vec.size() - 1, K);
+	std::cout <<  "After ";
+	printVec();
+	std::cout <<  "}"  << std::endl;
+	std::cout << std::endl;
 }
 
-void PmergeMe::sortDeque() {
-	
+void PmergeMe::sortDeque(){
+	std::cout <<  "Deque\n{"  << std::endl;
+	std::cout << "Before ";
+	printDeque();
+	std::cout << std::endl;
+	int K = _deque.size() / 2;
+	sort(_deque, 0, _deque.size() - 1, K);
+	std::cout <<  "After ";
+	printDeque();
+	std::cout <<  "}"  << std::endl;
+	std::cout << std::endl;
 }
