@@ -1,4 +1,4 @@
-NAME = cratos2
+NAME = tree
 
 CC = c++
 

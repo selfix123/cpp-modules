@@ -7,6 +7,7 @@ Intern::Intern() {
 }
 
 Intern::Intern(const Intern &inst) {
+	(void) inst;
 	std::cout << "Copy Intern constructor " << std::endl;
 }
 

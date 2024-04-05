@@ -53,7 +53,7 @@ std::cout << "test4" << std::endl;
 	std::cout << "----   Using New   ---" << std::endl;
 	std::cout << std::endl;
 
-std::cout << "test5" << std::endl;
+// std::cout << "test5" << std::endl;
 	Bureaucrat *Raph = NULL;
 	try{
 		Raph = new Bureaucrat("raph", 25);
@@ -65,7 +65,7 @@ std::cout << "test5" << std::endl;
 		delete Raph;
 		Raph = NULL;
 	}
-
+	delete Raph;
 	std::cout << std::endl;
 
 std::cout << "test6" << std::endl;
@@ -79,6 +79,7 @@ std::cout << "test6" << std::endl;
 		delete Raph;
 		Raph = NULL;
 	}
+	delete Raph;
 	std::cout << std::endl;
 
 std::cout << "test7" << std::endl;
@@ -92,7 +93,7 @@ std::cout << "test7" << std::endl;
 		delete Raph;
 		Raph = NULL;
 	}
-
+	delete Raph;
 	std::cout << std::endl;
 
 std::cout << "test8" << std::endl;
@@ -106,7 +107,7 @@ std::cout << "test8" << std::endl;
 		delete Raph;
 		Raph = NULL;
 	}
-
+	delete Raph;
 	std::cout << std::endl;
 
 std::cout << "test9" << std::endl;
@@ -120,7 +121,7 @@ std::cout << "test9" << std::endl;
 		delete Raph;
 		Raph = NULL;
 	}
-
+	delete Raph;
 	std::cout << std::endl;
 
 std::cout << "test10" << std::endl;

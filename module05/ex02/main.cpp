@@ -17,6 +17,7 @@ std::cout << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(*robot);
 		bob.executeForm(*robot);
+		delete robot;
 	}	
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
@@ -31,6 +32,7 @@ std::cout << std::endl;
 		AForm *robot = new RobotomyRequestForm("bob");
 		std::cout << bob << std::endl;
 		bob.executeForm(*robot);
+		delete robot;
 	}	
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
@@ -46,6 +48,7 @@ std::cout << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(*robot);
 		bob.executeForm(*robot);
+		delete robot;
 	}	
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
@@ -66,6 +69,7 @@ std::cout << std::endl;
 		for (int i = 0; i < 7;i++)
 			bob.Decrement();
 		bob.executeForm(*shrubs);
+		delete shrubs;
 	}	
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
@@ -82,6 +86,7 @@ std::cout << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(*shrubs);
 		bob.executeForm(*shrubs);
+		delete shrubs;
 	}	
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
@@ -98,6 +103,7 @@ std::cout << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(*shrubs);
 		bob.executeForm(*shrubs);
+		delete shrubs;
 	}	
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
@@ -115,6 +121,8 @@ std::cout << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(*pres);
 		bob.executeForm(*pres);
+		delete pres;
+
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -129,6 +137,8 @@ std::cout << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(*pres);
 		bob.executeForm(*pres);
+		delete pres;
+
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -143,6 +153,7 @@ std::cout << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(*pres);
 		bob.executeForm(*pres);
+		delete pres;
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}

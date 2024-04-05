@@ -1,4 +1,4 @@
-NAME = cratos2
+NAME = ex01
 
 CC = c++
 

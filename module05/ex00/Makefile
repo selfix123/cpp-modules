@@ -1,4 +1,4 @@
-NAME = cratos
+NAME = ex00
 
 CC = c++
 

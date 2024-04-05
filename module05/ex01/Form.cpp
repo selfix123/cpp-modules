@@ -2,7 +2,7 @@
 #include <iostream>
 
 Form::Form(std::string name,int signGrade, int execGrade):_name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade) {
-	std::cout << "Default Form constructor " << std::endl;
+	//std::cout << "Default Form constructor " << std::endl;
 	if (_signGrade < 1 || _execGrade < 1)
 		throw GradeTooHightException();
 	else if (_signGrade > 150 || _execGrade > 150)
@@ -10,16 +10,16 @@ Form::Form(std::string name,int signGrade, int execGrade):_name(name), _isSigned
 }
 
 Form::Form(const Form &inst):_name(inst.getName()),  _isSigned(inst.getIsSigned()),_signGrade(inst.getSignGrade()), _execGrade(inst.getExecGrade()){
-	std::cout << "Copy Form constructor " << std::endl;
+	//std::cout << "Copy Form constructor " << std::endl;
 	*this = inst;
 }
 
 Form::~Form() {
-	std::cout << "Form destructor" << std::endl;
+	//std::cout << "Form destructor" << std::endl;
 }
 
 Form& Form::operator=(const Form &rhs) {
-	std::cout << "Form operator = overide" << std::endl;
+//	std::cout << "Form operator = overide" << std::endl;
 	if (this != &rhs)
 		this->_isSigned = rhs._isSigned;
 	return *this;
