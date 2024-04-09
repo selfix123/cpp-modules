@@ -1,8 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(void){
 
@@ -11,15 +9,24 @@ std::cout << std::endl;
 std::cout << "---test1 ok---" << std::endl;
 std::cout << std::endl;
 	try{
-		Bureaucrat bob("bob", 45);
-		AForm *robot = new RobotomyRequestForm("bob");
-		std::cout << bob << std::endl;
-		bob.signForm(*robot);
-		bob.executeForm(*robot);
-		delete robot;
+		Intern lara;
+		AForm *form = lara.makeForm("robot form", "michel");
+		std::cout << form->getName() << std::endl;
+		Bureaucrat tommy("tom", 1);
+		Bureaucrat jimmy("jimmy", 2);
+		Bureaucrat michel("michel", 100);
+		std::cout << jimmy << std::endl;
+		std::cout << michel << std::endl;
+		michel = jimmy;
+		tommy.signForm(*form);
+		jimmy.executeForm(*form);
+		std::cout << jimmy << std::endl;
+		std::cout << michel << std::endl;
+		delete form;
+
 	}	
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
 	}
-	return 14;
+	return 0;
 }

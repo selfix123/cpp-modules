@@ -2,11 +2,11 @@
 #include <iostream>
 
 AForm::AForm():_signGrade(25), _execGrade(150){
-	std::cout << "Default AForm constructor " << std::endl;
+	//std::cout << "Default AForm constructor " << std::endl;
 }
 
 AForm::AForm(std::string name,int signGrade, int execGrade):_name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade) {
-	std::cout << "Default AForm constructor " << std::endl;
+	//std::cout << "Default AForm constructor " << std::endl;
 	if (_signGrade < 1 || _execGrade < 1)
 		throw GradeTooHightException();
 	else if (_signGrade > 150 || _execGrade > 150)
@@ -14,12 +14,12 @@ AForm::AForm(std::string name,int signGrade, int execGrade):_name(name), _isSign
 }
 
 AForm::AForm(const AForm &inst):_name(inst.getName()),  _isSigned(inst.getIsSigned()),_signGrade(inst.getSignGrade()), _execGrade(inst.getExecGrade()){
-	std::cout << "Copy AForm constructor " << std::endl;
+	//std::cout << "Copy AForm constructor " << std::endl;
 	*this = inst;
 }
 
 AForm::~AForm() {
-	std::cout << "AForm destructor" << std::endl;
+	//std::cout << "AForm destructor" << std::endl;
 }
 
 AForm& AForm::operator=(const AForm &rhs) {

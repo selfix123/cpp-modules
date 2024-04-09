@@ -157,5 +157,5 @@ std::cout << std::endl;
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
-	return 14;
+	return 0;
 }

@@ -2,7 +2,7 @@
 #include <iostream>
 
 Bureaucrat::Bureaucrat(std::string name, int grade):_name(name), _grade(grade) {
-	std::cout << "Default Bureaucrat constructor " << std::endl;
+	//std::cout << "Default Bureaucrat constructor " << std::endl;
 	if (_grade < 1)
 		throw GradeTooLowException();
 	else if (_grade > 150)
@@ -10,15 +10,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade):_name(name), _grade(grade) {
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &inst): _name(inst.getName()), _grade(inst.getGrade()) {
-	std::cout << "Copy Bureaucrat constructor " << std::endl;
+	//std::cout << "Copy Bureaucrat constructor " << std::endl;
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat destructor" << std::endl;
+	//std::cout << "Bureaucrat destructor" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs) {
-	std::cout << "Bureaucrat operator = overide" << std::endl;
+	//std::cout << "Bureaucrat operator = overide" << std::endl;
 	if (this != &rhs)
 		this->_grade = rhs._grade;
 	return *this;

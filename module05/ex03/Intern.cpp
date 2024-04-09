@@ -1,22 +1,23 @@
 #include "Intern.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include <stdexcept>
 
 Intern::Intern() {
-	std::cout << "Default Intern constructor " << std::endl;
+	//std::cout << "Default Intern constructor " << std::endl;
 }
 
 Intern::Intern(const Intern &inst) {
 	(void) inst;
-	std::cout << "Copy Intern constructor " << std::endl;
+	//std::cout << "Copy Intern constructor " << std::endl;
 }
 
 Intern::~Intern() {
-	std::cout << "Intern destructor" << std::endl;
+	//std::cout << "Intern destructor" << std::endl;
 }
 
 Intern& Intern::operator=(const Intern &rhs) {
-	std::cout << "Intern operator = overide" << std::endl;
+	//std::cout << "Intern operator = overide" << std::endl;
 	if (this != &rhs) {
 	}
 	return *this;
@@ -27,7 +28,7 @@ AForm *Intern::makeForm(std::string name, std::string target){
 	int i = 0;
 	AForm *form = NULL;
 	for (i = 0; i < 3;i++){
-		if (types[i] != name)
+		if (types[i] == name)
 			break;
 	}
 		switch (i) {
@@ -41,8 +42,9 @@ AForm *Intern::makeForm(std::string name, std::string target){
 				form = new ShrubberyCreationForm(target);
 				break;
 			default:
-				std::cout << "Unknown form bruv!" << std::endl;
+				throw std::invalid_argument("Invalid form!");
 		}
-		std::cout << "Intern creates " << form->getName() << std::endl;
+		if (form)
+			std::cout << "Intern creates " << form->getName() << std::endl;
 		return form;
 }
