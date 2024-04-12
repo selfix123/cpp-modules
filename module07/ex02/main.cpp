@@ -10,7 +10,7 @@ int main(void){
 	strArray.printElem();
 
 	try {
-		strArray[5] = "Im out of bound lmao";
+		strArray[5] = "Sorry out of bound";
 		strArray.printElem();
 	} catch (std::exception &e) {
 		std::cout << "Exeption caught: " << e.what() << std::endl;

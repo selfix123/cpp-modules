@@ -16,5 +16,5 @@ int main(int ac, char **av){
 		std::cout << "Oh wow I caught something lets see what it is:" << e.what() << std::endl;
 	
 	}
-	return 42;
+	return 0;
 }

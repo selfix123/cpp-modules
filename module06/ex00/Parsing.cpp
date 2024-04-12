@@ -1,4 +1,7 @@
 #include "Parsing.hpp"
+#include <climits>
+#include <exception>
+#include <string>
 
 Parsing::Parsing():_str(""), _type(NONE){
 }
@@ -12,7 +15,6 @@ Parsing::Parsing(const Parsing &inst){
 
 Parsing& Parsing::operator=(const Parsing &rhs) {
 	(void)rhs;
-	std::cout << "Parsing operator = overide" << std::endl;
 	return *this;
 }
 
@@ -147,12 +149,13 @@ void Parsing::floatConv(){
 		std::cout << "char: Not printable" << std::endl;
 	else
 		std::cout << "char: Impossible" << std::endl;
-	if (tmp <=  INT_MAX){
+	try {
+		std::stoi(std::to_string(tmp));
 		_intValue = static_cast<int>(tmp);
-		std::cout << "integer: " << _intValue <<  std::endl;
-	}
-	else
+		std::cout << "int: " << _intValue << std::endl;
+	} catch (std::exception) {
 		std::cout << "int: impossible" << std::endl;
+	}
 	_floatValue = tmp;
 	std::cout << "float: " << std::fixed << std::setprecision(2) << _floatValue << "f" << std::endl;
 	_doubleValue = static_cast<double>(tmp);
@@ -169,12 +172,13 @@ void Parsing::doubleConv(){
 		std::cout << "char: Not printable" << std::endl;
 	else
 		std::cout << "char: Impossible" << std::endl;
-	if (tmp <=  INT_MAX){
+	try {
+		std::stoi(std::to_string(tmp));
 		_intValue = static_cast<int>(tmp);
-		std::cout << "integer: " << _intValue << std::endl;
-	}
-	else
+		std::cout << "int: " << _intValue << std::endl;
+	} catch (std::exception) {
 		std::cout << "int: impossible" << std::endl;
+	}
 	_floatValue = static_cast<float>(tmp);
 	std::cout << "float: " << std::fixed << std::setprecision(2) << _floatValue << "f" << std::endl;
 	_doubleValue = tmp;

@@ -3,15 +3,17 @@
 #include <iostream>
 
 template <typename T>
-void iter(T *array, size_t size, T func(T content)){
-	for (size_t i = 0; i < size;i++)
-		array[i] = func(array[i]);
+void iter(T *array, unsigned int len, void function(T &content)) {
+	for (unsigned int i = 0; i < len; i++) {
+		function(array[i]);
+	}
 }
 
-template <typename T, typename PTRF>
-void iter(T *array, size_t size, PTRF func(T &content)){
-	for (size_t i = 0; i < size;i++)
-		func(array[i]);
+template <typename T, typename F>
+void iter(T *array, unsigned int len, F function) {
+	for (unsigned int i = 0; i < len; i++) {
+		function(array[i]);
+	}
 }
 
 template <typename T>

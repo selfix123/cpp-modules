@@ -9,12 +9,12 @@ int main(void){
 		{
 			std::cout << std::endl;
 			size_t number[] = {1, 2, 3, 4, 5};
-			iter(number, 5, printElem<size_t>);
-			iter(number, 5, increment<size_t>);
+			iter(number, 5, printElem);
+			iter(number, 5, increment);
 			std::cout << std::endl;
-			iter(number, 5, printElem<size_t>);
+			iter(number, 5, printElem);
 			std::cout << std::endl;
-			iter(number, 5, decrement<size_t>);
-			iter(number, 5, printElem<size_t>);
+			iter(number, 5, decrement);
+			iter(number, 5, printElem);
 		}
 }
