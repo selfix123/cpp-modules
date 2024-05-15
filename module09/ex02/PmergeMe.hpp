@@ -9,6 +9,8 @@ class PmergeMe {
     private:
         std::vector<int> _vec;
         std::deque<int> _deque;
+		double			_dequeTime;
+		double				_vecTime;
         int             _length;
 
     public:
@@ -21,12 +23,14 @@ class PmergeMe {
     void sortDeque();
     void printDeque();
     void sortVector();
+	double getTime();
+	void printTime();
     void parseInput(int ac, char **av);
 };
 
 template<typename T>
-	void insertionSort(T &arr, int left, int midle) {
-	for (int i = left; i < midle; i++) {
+	void insertionSort(T &arr, int left, int middle) {
+	for (int i = left; i < middle; i++) {
 		int tempVal = arr[i + 1];
 		int j = i + 1;
 		while (j > left && arr[j - 1] > tempVal) {
@@ -35,20 +39,20 @@ template<typename T>
 		}
 		arr[j] = tempVal;
 	}
-	for (int i = left; i <= midle; i++) {
+	for (int i = left; i <= middle; i++) {
 		std::cout << arr[i] << " ";
 	}
 	std::cout << std::endl << std::endl;
 }
 
 template<typename T>
-void merge(T& arr, int left, int midle, int right) {
-	int n1 = midle - left + 1;
-	int n2 = right - midle;
+void merge(T& arr, int left, int middle, int right) {
+	int n1 = middle - left + 1;
+	int n2 = right - middle;
 	T LA(n1), RA(n2);
 
-	std::copy(arr.begin() + left, arr.begin() + midle + 1, LA.begin());
-	std::copy(arr.begin() + midle + 1, arr.begin() + right + 1, RA.begin());
+	std::copy(arr.begin() + left, arr.begin() + middle + 1, LA.begin());
+	std::copy(arr.begin() + middle + 1, arr.begin() + right + 1, RA.begin());
 
 	int RIDX = 0;
 	int LIDX = 0;
@@ -72,10 +76,10 @@ void merge(T& arr, int left, int midle, int right) {
 template<typename T>
 void sort(T& arr, int left, int right, int &len) {
 	if (right - left > len) {
-		int midle = (left + right) / 2;
-		sort(arr, left, midle, len);
-		sort(arr, midle + 1, right, len);
-		merge(arr, left, midle, right);
+		int middle = (left + right) / 2;
+		sort(arr, left, middle, len);
+		sort(arr, middle + 1, right, len);
+		merge(arr, left, middle, right);
 	} else {
 		insertionSort(arr, left, right);
 	}

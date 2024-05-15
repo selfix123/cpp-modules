@@ -1,7 +1,6 @@
 #include "AMateria.hpp"
 #include <iostream>
 
-
 AMateria::AMateria(){
 	if (CALL)
 		std::cout << "Default AMateria constructor" << std::endl;

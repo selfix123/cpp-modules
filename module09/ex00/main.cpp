@@ -9,7 +9,6 @@ int main(int ac, char **av){
 	{
 		BitcoinExchange money(av[1]);
 		money.fillMap();
-		//money.printDb();
 		money.getRate();
 	}
 	catch(const std::exception& e)

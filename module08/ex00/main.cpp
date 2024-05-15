@@ -12,9 +12,9 @@ int main(void){
 	vec.push_back(40);
 
 	try {
-		it = easyFind(vec, 100);
+		it = easyFind(vec, 10);
 		std::cout << *it << std::endl;
 	} catch (std::exception &e) {
-		std::cout << "Wow I caught an exeption lets see what it is: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 }

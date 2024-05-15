@@ -1,5 +1,4 @@
 #include "Span.hpp"
-#include <cstddef>
 
 Span::Span():_n(0) {}
 
@@ -12,7 +11,6 @@ Span::Span(const Span &inst) {
 Span::~Span() {}
 
 Span& Span::operator=(const Span &rhs) {
-	std::cout << "Span operator = overide" << std::endl;
 	if (this != &rhs) {
 		_n = rhs.getN();
 		_vec = rhs.getVec();
@@ -21,18 +19,35 @@ Span& Span::operator=(const Span &rhs) {
 }
 
 void Span::addNumber(int nb){
-	if (_vec.size() > _n)
-		throw std::out_of_range("Out of bound!");
+	if (getN() < 2 || _vec.size() > static_cast<unsigned int>(getN()))
+		throw std::out_of_range("Invalid number of numbers!");
 	_vec.push_back(nb);
 }
 
+void Span::addMoreNumber(int start, int finish){
+	int smallest;
+	int biggest;
+
+	if  (start > finish){
+		smallest = finish;
+		biggest = start;
+	}
+	else {
+		smallest = start;
+		biggest = finish;
+	}
+	while (smallest <= biggest){
+		addNumber(smallest);
+		smallest++;
+	}
+	
+}
+
 unsigned int Span::shortestSpan(){
-	if (_n < 2)
-		throw std::length_error("Need more number bro!");
 	unsigned int min = std::numeric_limits<int>::max();
 	for (size_t i = 0; i < _vec.size() - 1;++i){
 		for (size_t j = i + 1; j < _vec.size();++j){
-			int tistance = std::abs(_vec[i] - _vec[j]);
+			unsigned int tistance = std::abs(_vec[i] - _vec[j]);
 			if (tistance < min)
 				min = tistance;
 		}
@@ -41,9 +56,6 @@ unsigned int Span::shortestSpan(){
 }
 
 unsigned int Span::longestSpan(){
-	if (_n < 2)
-		throw std::length_error("Need more number bro!");
-
 	unsigned int min = *std::min_element(_vec.begin(), _vec.end());
 	unsigned int max = *std::max_element(_vec.begin(), _vec.end());
 	return (max - min);

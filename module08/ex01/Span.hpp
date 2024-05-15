@@ -21,6 +21,7 @@ public:
 
 	// Functions
 	void addNumber(int nb);
+	void addMoreNumber(int start, int finish);
 	unsigned int shortestSpan();
 	unsigned int longestSpan();
 	std::vector<int> getVec() const;
