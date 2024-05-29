@@ -1,4 +1,6 @@
 #include "RPN.hpp"
+#include <cctype>
+#include <cstddef>
 #include <stdexcept>
 #include <string>
 
@@ -22,6 +24,8 @@ RPN& RPN::operator=(const RPN &rhs) {
 }
 
 void RPN::RpnCalculation(){
+	if (_input.length() < 2)
+		throw std::out_of_range("Need more then one number to compute calculation!");
 	for (size_t i = 0; i < _input.length();++i){
 		if (std::isdigit(_input[i])){
 			_stack.push(std::stoi(_input.substr(i ,1)));
@@ -45,7 +49,7 @@ void RPN::RpnCalculation(){
 			_stack.push(_a * _b);
 		}
 		else if (_input[i] != ' ' && _input[i] != '(' && _input[i] != ')')
-			throw std::logic_error("Invalid patern detected: need to put space between each number!");
+			throw std::logic_error("Invalid patern detected: invalid character");
 	}
 	if (_stack.size() < 1)
 		throw std::invalid_argument("Cannot compute the calculation, missing something!");
@@ -54,12 +58,8 @@ void RPN::RpnCalculation(){
 }
 
 void RPN::popNumber(){
-	if (_stack.size() > 1){
 		_b = _stack.top();
 		_stack.pop();
 		_a = _stack.top();
 		_stack.pop();
-	}
-	else 
-		throw std::out_of_range("Need more then one number to compute calculation!");
 }

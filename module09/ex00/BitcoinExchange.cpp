@@ -50,7 +50,6 @@ void BitcoinExchange::getRate(){
 		throw std::invalid_argument("cannot open or find file!");
 
 	getline(_file[1], _line);
-	std::cout << _line << std::endl;
 	if (_line != "date | value")
 		throw std::invalid_argument("Invalid header!");
 	while (getline(_file[1], _line)){

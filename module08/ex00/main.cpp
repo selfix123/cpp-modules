@@ -1,5 +1,4 @@
 #include "easyFind.hpp"
-#include <exception>
 #include <vector>
 
 int main(void){

@@ -1,5 +1,6 @@
 #include "PmergeMe.hpp"
 #include <chrono>
+#include <cstdlib>
 
 PmergeMe::PmergeMe() {}
 
@@ -28,7 +29,7 @@ double PmergeMe::getTime(){
 
 void PmergeMe::parseInput(int ac, char **av) {
 	for (int i = 1; i < ac;i++){
-		int number = std::stoi(av[i]);
+			int number = std::stoi(av[i]);
 		if (number < 0)
 			throw std::out_of_range("Cannot take negative number!");
 		_vec.push_back(number);
@@ -39,12 +40,12 @@ void PmergeMe::parseInput(int ac, char **av) {
 
 void PmergeMe::printVec() {
 	for (unsigned int i = 0; i < _vec.size();i++)
-		std::cout << _vec[i];
+		std::cout << _vec[i] << " ";
 }
 
 void PmergeMe::printDeque() {
 	for (unsigned int i = 0; i < _deque.size(); i++)
-		std::cout << _deque[i];
+		std::cout << _deque[i] << " ";
 }
 
 void PmergeMe::printTime(){
@@ -56,15 +57,14 @@ void PmergeMe::sortVector(){
 	std::cout <<  "Vector\n{"  << std::endl;
 	std::cout << "Before ";
 	printVec();
-	std::cout << std::endl;
 	getTime();
 	int K = _vec.size() / 2;
-	std::cout <<  "After ";
+	std::cout << std::endl;
+	std::cout <<  "After \n";
 	sort(_vec, 0, _vec.size() - 1, K);
 	printVec();
 	_vecTime = getTime();
-	std::cout <<  "}"  << std::endl;
-	std::cout << std::endl;
+	std::cout <<  "\n}"  << std::endl;
 }
 
 void PmergeMe::sortDeque(){
@@ -74,10 +74,11 @@ void PmergeMe::sortDeque(){
 	std::cout << std::endl;
 	getTime();
 	int K = _deque.size() / 2;
-	std::cout <<  "After ";
+	std::cout << std::endl;
+	std::cout <<  "After \n";
 	sort(_deque, 0, _deque.size() - 1, K);
 	printDeque();
 	_dequeTime = getTime();
-	std::cout <<  "}"  << std::endl;
+	std::cout <<  "\n}"  << std::endl;
 	std::cout << std::endl;
 }

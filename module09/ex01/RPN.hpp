@@ -25,8 +25,7 @@ public:
 	// Functions
 	void loop();
 	void popNumber();
-	void parseInput();
-	void printInput();
 	void RpnCalculation();
+	void parseInput();
 
 };
